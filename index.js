@@ -6,7 +6,7 @@ const Path = require("path");
 const moment = require("moment");
 const mkdirp = require("mkdirp");
 const { RateLimit } = require("async-sema");
-require("dotenv").config( { path: 'config.txt' } )
+require("dotenv").config( { path: process.cwd() + '/config.txt' } )
 
 // install cookie jar
 axiosCookieJarSupport(axios);
@@ -17,7 +17,7 @@ axios.defaults.withCredentials = true;
 const LOGIN_URL = "https://home.classdojo.com/api/session";
 const FEED_URL = "https://home.classdojo.com/api/storyFeed?includePrivate=true";
 
-const IMAGE_DIR = "images";
+const IMAGE_DIR = process.cwd() + "/images";
 const DATE_FORMAT = "YYYY-MM-DD";
 const MAX_FEEDS = 300;
 const CONCURRENCY = 15;
