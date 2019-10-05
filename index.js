@@ -19,7 +19,7 @@ const FEED_URL = "https://home.classdojo.com/api/storyFeed?includePrivate=true";
 
 const IMAGE_DIR = "images";
 const DATE_FORMAT = "YYYY-MM-DD";
-const MAX_FEEDS = 30;
+const MAX_FEEDS = 300;
 const CONCURRENCY = 15;
 const LIMITER = RateLimit(CONCURRENCY);
 
