@@ -6,7 +6,7 @@ const Path = require("path");
 const moment = require("moment");
 const mkdirp = require("mkdirp");
 const { RateLimit } = require("async-sema");
-require("dotenv").config()
+require("dotenv").config( { path: 'config.txt' } )
 
 // install cookie jar
 axiosCookieJarSupport(axios);
@@ -29,7 +29,7 @@ async function main() {
     try {
         await login();
     } catch (error) {
-        console.error("Failed to login to ClassDojo, double check your .env file", error);
+        console.error("Failed to login to ClassDojo, double check your config.txt file", error);
         process.exit();
     }
 
@@ -46,7 +46,7 @@ async function login() {
 
     function checkEnv(variable) {
         if (!process.env[variable]) {
-            throw new Error(`${variable} not set in the .env file. Please follow the instructions on the README of the project.`);
+            throw new Error(`${variable} not set in the config.txt file. Please follow the instructions on the README of the project.`);
         }
     }
 
